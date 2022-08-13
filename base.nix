@@ -26,7 +26,6 @@
       description = "Josh Hammer";
       extraGroups = [ "networkmanager" "wheel" ];
       shell = lib.mkOverride 500 pkgs.fish;
-      packages = with pkgs; [];
     };
 
     home-manager = {
@@ -39,8 +38,7 @@
         username = "joshammer";
         homeDirectory = "/home/joshammer";
         stateVersion = "22.05";
-        packages = with pkgs; [
-        ];
+        packages = with pkgs; [];
       };
 
       programs.kitty = {
@@ -115,10 +113,10 @@
   environment.shellAliases = {
     snrs = "sudo nixos-rebuild switch";
 
-    con = "sudo nvim /etc/nixos/";
-    con-nvim = "sudo nvim /etc/nixos/neovim.nix";
-    con-fish = "sudo nvim /etc/nixos/fish.nix";
-    con-base = "sudo nvim /etc/nixos/configuration.nix";
+    con = "nvim /home/joshammer/.config/nixos/";
+    con-nvim = "nvim /home/joshammer/.config/nixos/neovim.nix";
+    con-fish = "nvim /home/joshammer/.config/nixos/fish.nix";
+    con-base = "nvim /home/joshammer/.config/nixos/base.nix";
   };
 
   programs.htop = {
